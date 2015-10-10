@@ -2,7 +2,7 @@
 ### StretchPlayer Build Script (CMake)                             ###
 ######################################################################
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.11)
 
 if(COMMAND cmake_policy)
   cmake_policy(SET CMP0003 NEW)
@@ -21,12 +21,11 @@ ENDIF( NOT ( AUDIO_SUPPORT_JACK OR AUDIO_SUPPORT_ALSA ) )
 ######################################################################
 
 ###
-### Qt 4 http://qt.nokia.com/
+### Qt 5 http://qt.io/
 ###
 
-FIND_PACKAGE(Qt4 4.5.0 REQUIRED)
-INCLUDE(${QT_USE_FILE})
-SET(LIBS ${QT_LIBRARIES})
+FIND_PACKAGE(Qt5Widgets REQUIRED)
+SET(LIBS Qt5::Widgets)
 
 IF( AUDIO_SUPPORT_JACK )
   FIND_PACKAGE(JACK REQUIRED)
@@ -71,6 +70,8 @@ LIST(APPEND sp_cpp
   RubberBandServer.cpp
   )
 
+#set_source_files_properties(Engine.cpp PROPERTIES COMPILE_FLAGS -fpermissive)
+
 LIST(APPEND sp_hpp
   Configuration.hpp
   PlayerWidget.hpp
@@ -103,10 +104,12 @@ IF( ALSA_FOUND )
   LIST(APPEND sp_cpp AlsaAudioSystem.cpp)
   LIST(APPEND sp_hpp AlsaAudioSystem.hpp)
   LIST(APPEND sp_hpp AlsaAudioSystemPrivate.hpp)
+
+  #set_source_files_properties(AlsaAudioSystem.cpp PROPERTIES COMPILE_FLAGS -fpermissive)
 ENDIF( ALSA_FOUND )
 
-QT4_WRAP_CPP(sp_moc ${sp_moc_hpp}) 
-QT4_ADD_RESOURCES(sp_qrc stretchplayer.qrc)
+set(CMAKE_AUTOMOC ON)
+qt5_add_resources(sp_qrc stretchplayer.qrc)
 
 INCLUDE_DIRECTORIES(
   ${CMAKE_SOURCE_DIR}
@@ -144,7 +147,7 @@ MACRO(lib_report name)
   ENDIF(${name}_FOUND)
 ENDMACRO(lib_report)
 
-lib_report(QT4)
+lib_report(Qt5Widgets)
 lib_report(JACK)
 lib_report(ALSA)
 lib_report(LibSndfile)

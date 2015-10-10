@@ -1,27 +1,31 @@
 Source: stretchplayer
 Section: sound
 Priority: optional
-Maintainer: Gabriel M. Beddingfield <gabriel@teuton.org>
-Build-Depends: 
- debhelper (>= 7.0.0),
- libqt4-dev,
- libsndfile1-dev,
- libjack-dev,
- libasound2-dev,
- librubberband-dev,
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Uploaders: Arnout Engelen <arnouten@bzzt.net>
+Build-Depends: cdbs,
  cmake,
- cdbs
-Standards-Version: 3.8.3
+ debhelper (>= 7.0.0),
+ libjack-dev,
+ qtbase5-dev,
+ librubberband-dev,
+ libsndfile1-dev,
+ libmpg123-dev,
+ python-scour
+Standards-Version: 3.9.2
+Vcs-Git: git://git.debian.org/pkg-multimedia/stretchplayer.git
+Vcs-Browser: http://git.debian.org/?p=pkg-multimedia/stretchplayer.git
+Homepage: http://www.teuton.org/~gabriel/stretchplayer/
 
 Package: stretchplayer
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+ jackd,
+ ${misc:Depends}
 Description: Audio file player with time stretch and pitch shifting
- Stretchplayer will play back an audio file and allow yout to
+ StretchPlayer will play back an audio file and allow you to
  time stretch (without affecting pitch) and/or pitch shift (without
  affecting the time) the audio, even while you are listening to it.
- .
- See http://www.teuton.org/~gabriel/stretchplayer/ for details.
  .
  Warning: this package contains the development version (potentially
  unstable) released for testing purpose only.
@@ -30,13 +34,11 @@ Package: stretchplayer-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${misc:Depends},
  stretchplayer (=${binary:Version})
-Description: Audio file player with time stretch and pitch shifting
- Stretchplayer will play back an audio file and allow yout to
+Description: Debugging symbols for StretchPlayer
+ StretchPlayer will play back an audio file and allow you to
  time stretch (without affecting pitch) and/or pitch shift (without
  affecting the time) the audio, even while you are listening to it.
- .
- See http://www.teuton.org/~gabriel/stretchplayer/ for details.
  .
  This package contains the debugging symbols for stretchplayer.

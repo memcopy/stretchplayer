@@ -24,10 +24,9 @@
 #include "Configuration.hpp"
 #include "PlayerWidget.hpp"
 #include <iostream>
-#include <QPlastiqueStyle>
 #include <memory>
 #include <stdexcept>
-#include <QtGui/QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 int main(int argc, char* argv[])
 {
@@ -48,7 +47,7 @@ int main(int argc, char* argv[])
     try{
 	pw.reset( new StretchPlayer::PlayerWidget(&config) );
 
-	app.setStyle( new QPlastiqueStyle );
+	//app.setStyle( new QPlastiqueStyle );
 
 	pw->show();
 

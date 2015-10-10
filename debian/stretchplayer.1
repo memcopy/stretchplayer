@@ -1,0 +1,29 @@
+.TH stretchplayer 1   "November 28, 2010" "version 0.503" "USER COMMANDS"
+.SH NAME
+stretchplayer \- Audio player with time stretch and pitch shift
+.SH SYNOPSIS
+.B stretchplayer
+[file]
+.SH DESCRIPTION
+StretchPlayer is an audio file player that allows you to change the speed of 
+the song without changing the pitch. It will also allow you to transpose the 
+song to another key (while also changing the speed). This is a very powerful 
+tool for musicians who are learning to play a pre-recorded song. Its features 
+include:
+.IP \[bu] 
+Time Stretch (50% to 150% of song speed, without changing pitch)
+.IP \[bu] 
+Pitch shift (up or down 1 octave)
+.IP \[bu] 
+A/B repeat
+.IP \[bu] 
+Lots of keyboard accelerators
+.PP
+The player supports all the audio formats that libsndfile supports, which 
+currently includes OGG/Vorbis, WAV, W64, AIFF, SND, and FLAC. Note that 
+neither libsndfile nor StretchPlayer supports MP3 files for patent liability 
+reasons.
+.SH BUGS
+StretchPlayer will not work if you have a small buffer size (<= 256 frames).
+Bug reports can be sent to gabriel@teuton.org. 
+

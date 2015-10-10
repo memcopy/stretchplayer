@@ -54,7 +54,7 @@ namespace StretchPlayer
 	    name = *app_name;
 	}
 
-	_client = jack_client_open(name.toAscii(), JackNullOption, 0);
+	_client = jack_client_open(name.toLocal8Bit(), JackNullOption, 0);
 	if(!_client) {
 	    err = "Could not set up JACK";
 	    goto init_bail;

@@ -1,29 +1,36 @@
-stretchplayer (0.504-0) unstable; urgency=low
+stretchplayer (0.600-1) unstable; urgency=low
 
-  * New release.
-  * Stretching now real-time safe for segments <512 samples
+  * New upstream version
+  * adopted new dependencies (Qt5)
 
- -- Gabriel Beddingfield <gabriel@teuton.org>  Thu, 16 Jun 2011 23:21:27 -0500
+ -- Markus Meier <markus@dev-nil.com>  Sat, 10 Oct 2015 22:16:56 +0200
 
-stretchplayer (0.503-0) unstable; urgency=low
+stretchplayer (0.503-3) unstable; urgency=medium
 
-  * Remove Debian packaging from release tarballs.
+  * Team upload.
+  * debian/patches/cmake-include-dirs.patch: Correctly set include
+    directories. (Closes: #745224)
 
- -- Gabriel M. Beddingfield <gabriel@teuton.org>  Sat, 17 Jul 2010 23:02:54 -0500
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 28 Jun 2015 21:41:55 +0200
 
-stretchplayer (0.502) unstable; urgency=low
+stretchplayer (0.503-2) unstable; urgency=low
 
-  * New release.
-  * Reduce unnecessary Xorg calculations.
-  * Add CMake USE_COMPOSITING option.
-  * Fix 64-bit build errors with integer types.
-  * Suppress build warnings.
+  * Team upload.
+  * debian/control:
+    - One-dep-per-line.
+    - Sort build-dependencies.
+    - Fix small misspelling.
+    - Bump Standards.
+    - Depends on jackd (Closes: #624286).
+    - Remove shlibs:Depends macro from stretchplayer-dbg's Depends field.
+  * debian/copyright
+    - Update to DEP-5 rev.174.
+    - Fix indentation.
 
- -- Gabriel M. Beddingfield <gabriel@teuton.org>  Sun, 11 Jul 2010 21:45:52 -0500
+ -- Alessio Treglia <alessio@debian.org>  Wed, 27 Apr 2011 19:25:40 +0200
 
-stretchplayer (0.501) unstable; urgency=low
+stretchplayer (0.503-1) unstable; urgency=low
 
-  * Create a Debian package for stretchplayer.
+  * Initial upload (Closes: #605256).
 
- -- Gabriel M. Beddingfield <gabriel@teuton.org>  Mon, 19 Apr 2010 12:01:58 -0500
-
+ -- Arnout Engelen <arnouten@bzzt.net>  Sun, 28 Nov 2010 19:11:57 +0100

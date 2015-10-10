@@ -60,14 +60,15 @@ In order to build from source, you will need the following libraries
 installed on your system, and the development header files.
 
 	REQUIRED
-	* Qt 4 Library (>=4.5.0)
-	* Qt 4 SDK (moc, uic, etc.)
+	* Qt 5 Library (>=5.0)
+	* Qt 5 SDK (moc, uic, etc.)
 	* GNU g++ compiler (>=4.0, 3.x might work)
-	* CMake (>= 2.6, earlier might work)
+	* CMake (>= 2.8.11)
 	* JACK (jack1 >= 0.109.0, jack2 >= 1.9.3, earlier ones may
           work on some systems)
 	* libsndfile >=1.0.17
 	* librubberband
+	* libmpg123
 
 On a dual-core, 32-bit, 1800MHz processor using a parallel build,
 StretchPlayer takes about 10 seconds to compile.
@@ -115,7 +116,7 @@ Unfortunately, CMake doesn't have something that works exactly like
 './configure --help' that will show you all the configuration
 options.  The best way to see the standard options is to run:
 
-	$ ccmake /path/to/sources/stretchplayer-0.500
+	$ ccmake /path/to/sources/stretchplayer-0.600
 
 Which will give you a listing of the options from the CMakeLists.txt
 file.  You have the following commands (and more) available:

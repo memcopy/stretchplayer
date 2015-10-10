@@ -1,0 +1,3 @@
+version=3
+http://www.teuton.org/~gabriel/stretchplayer/ \
+	stretchplayer_(.*)\.orig\.tar\.gz
